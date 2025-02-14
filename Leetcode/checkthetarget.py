@@ -15,7 +15,7 @@ def check_for_target(nums,target):
     while left < right:
         current = nums[left] + nums[right]
         if current == target:
-            print(nums[left],nums[right])
+            print(f" nums: {nums[left]},{nums[right]}")
             return True
 
         elif current > target:
