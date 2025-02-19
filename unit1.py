@@ -56,6 +56,11 @@ print(what_time_is_it(2))
 print(what_time_is_it(7))
 print(what_time_is_it(12))
 
+# a function called blackjack() that takes an integer score as a parameter.
+# If score equals 21, print "Blackjack!".
+# If score is greater than 21, print "Bust!".
+# If score is greater than or equal to 17 and less than 21, print "Nice hand!".
+# If score is less than 17, print "Hit me!"
 
 def blackjack(score):
     if score == 21:
