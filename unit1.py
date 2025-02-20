@@ -96,3 +96,52 @@ def get_last(list):
     return list[len(list) - 1]
 
 print(get_last([1,2,3,4]))
+
+# a function counter() that uses the range function to print numbers between 1 and
+# a given stop value (inclusive).
+
+def counter(stop):
+    for num in range(1,stop + 1):
+        print(num)
+
+counter(7)
+
+# a function sum_ten() that returns the sum of numbers from 1 to 10.
+def sum_ten():
+    summ = 0
+    for num in range(1,11):
+        summ += num
+        print(summ)
+
+sum_ten()
+
+# a function sum_positive_range() that returns the sum of numbers from 1
+# to a given stop value (inclusive).
+
+def sum_positive_range(stop):
+    summ = 0
+    for num in range(1,stop + 1):
+        summ += num
+        print(summ)
+
+
+sum_positive_range(6)
+
+#a function sum_range() that returns the sum of numbers from a given start
+# value to a given stop value (inclusive).
+def sum_range(start,stop):
+    summ = 0
+    for num in range(start,stop + 1):
+        summ += num
+        print(summ)
+
+sum_range(3,9)
+
+# a function print_negatives() that takes a list of integers lst and
+# prints all negative numbers in the list.
+def print_negatives(lst):
+    for num in lst:
+        if num < 0:
+            print(num)
+
+print_negatives([3,-2,2,1,-5])
