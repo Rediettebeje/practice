@@ -144,4 +144,67 @@ def print_negatives(lst):
         if num < 0:
             print(num)
 
+
 print_negatives([3,-2,2,1,-5])
+
+
+# function doubled() that returns a new list of the doubled numbers.
+def doubled(lst):
+    for num in lst:
+        return (num * 2)     # this will only return the first number in the list
+        # The return statement inside the for loop causes the function to exit after processing the first element
+
+doubled([1,2,3,4])  # this will only return 2
+
+def doubled(lst):
+    return [item * 2 for item in lst]  #return a new list containing the doubled values
+
+lst = [1, 2, 3]
+new_lst = doubled(lst)
+print(new_lst)
+
+# understand 
+# function flip_sign() that takes in a list of integers lst as a parameter and returns a new list where each number in the original list has been multiplied by
+
+# plan
+# iterate through the list
+# return a new list with each number multiplied by -
+
+# implement
+def flip_sign(lst):
+    return [  num * 1 for num in lst]
+
+lstt = [1,-2,-3,4]
+flipped_lst = flip_sign(lstt)
+print(flipped_lst)
+
+# understand
+# a function max_difference() that takes in a list of integers lst and returns
+#  the difference between the smallest and largest value in the list.
+
+# plan
+# intialize two variables to store the smallest and largest value to zero
+# iterate through the list
+# compare the current value with the largest value
+# if the current value is greater, update the largest value
+# compare the current value with the largest value
+# if the current value is smaller, update the smallest value
+# return the difference between the largest and smallest value
+
+# implement
+def max_difference(lst):
+    largest = 0
+    smallest = 0
+
+    for num in lst:
+        if num > largest:
+            largest = num
+        if num < largest:
+            smallest = num
+    result = largest - smallest
+    return result
+
+lst = [5,22,8,10,2]
+max_diff = max_difference(lst)
+print(max_diff)
+
