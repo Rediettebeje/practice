@@ -208,3 +208,40 @@ lst = [5,22,8,10,2]
 max_diff = max_difference(lst)
 print(max_diff)
 
+
+
+# a function named mystery() that takes two lists of integers as parameters 
+# and returns a new list that contains all the numbers from the first list followed
+#  by all the numbers from the second list.
+
+def mystery(lst1,lst2):
+    for num in lst2:
+        lst1.append(num)
+    return lst1
+
+output = mystery([1,2,3],[4,5,6])
+print(output)
+
+# a function named count_negatives() that takes a list of integers as 
+# a parameter and returns the number of negative numbers in the list.
+
+def count_negatives(lst):
+    count = 0
+    for num in lst:
+        if num < 0:
+            count += 1
+    return count
+# test the function
+print(count_negatives([1,-2,3,-4,5]))
+
+
+# a function named find_min() that takes a list of integers as a 
+# parameter and returns the smallest number in the list.
+def find_min(lst):
+    min = lst[0]
+    for num in lst:
+        if num < min:
+            min = num
+    return min
+
+print(find_min([3,1,4,1,5,9,2,6,5,3,5,8,9,7,9]))
