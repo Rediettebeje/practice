@@ -208,8 +208,6 @@ lst = [5,22,8,10,2]
 max_diff = max_difference(lst)
 print(max_diff)
 
-
-
 # a function named mystery() that takes two lists of integers as parameters 
 # and returns a new list that contains all the numbers from the first list followed
 #  by all the numbers from the second list.
@@ -245,3 +243,108 @@ def find_min(lst):
     return min
 
 print(find_min([3,1,4,1,5,9,2,6,5,3,5,8,9,7,9]))
+
+# understand
+# a function that takes a list of integers numbers and an integer threshold as a parameter and 
+# returns the number of items in  numbers that are less than threshold.
+
+# plan
+# 1. initialize a counter variable to 0
+# 2. iterate through the list
+# 3. for each number in the list, check if it is less than the threshold
+# 4. if it is, increment the counter by 1
+# 5. return the counter
+
+# implement
+def count_below_threshold(numbers, threshold):
+    counter = 0
+    for num in numbers:
+        if num < threshold:
+            counter += 1
+    return counter
+
+# if we want to return the numbers
+# plan
+# 1. initialize an empty list to store the numbers that are less than the threshold
+# 2. iterate through the list
+# 3. for each number in the list, check if it is less than the threshold
+# 4. if it is, add it to the list
+# 5. return the list
+
+# implement
+def count_less_than(numbers, threshold):
+    less_threshold = []
+
+    for num in numbers:
+        if num < threshold:
+            less_threshold.append(num)
+    return less_threshold
+
+
+numbers = [12,8,2,4,4,10]
+counter = count_less_than(numbers,5)
+print(counter)
+    
+
+# understand
+
+# a function that takes a list of integers and returns a list of even numbers
+# plan
+# 1. initialize an empty list to store the even numbers
+# 2. iterate through the list
+# 3. for each number in the list, check if it is even
+# 4. if it is, add it to the list
+# 5. return the list
+
+# implement
+def get_evens(lst):
+    even_no = []
+    for num in lst:
+        if num % 2 == 0:
+            even_no.append(num)
+    return even_no
+
+
+lst = [1,2,3,4]
+evens_lst = get_evens(lst)
+print(evens_lst)
+
+
+
+# understand
+# a fun that prints out multiplies of 5 b/n 1 and 100
+
+# plan
+# iterate through the range of numbers from 1 to 100
+# check if the numbers is a multiplies of 5
+# if it is, print the number
+
+# implement
+def multiples_of_five():
+    for number in range(1,101):
+        if number % 5 == 0:
+            print(number)
+
+# multiples_of_five()
+
+# understand
+# a function that takes a number as a parameter and returns a list of all divisors of the number
+
+# plan
+# 1. initialize an empty list to store the divisors
+# 2. iterate through the range of numbers from 1 to the input number
+# 3. for each number in the range, check if it is a divisor of the input number
+# 4. if it is, add it to the list
+# 5. return the list
+
+# implement
+def find_divisors(n):
+    divisors = []
+    for num in range(1,n + 1):
+        if n % num == 0:
+            divisors.append(num)
+    return divisors
+
+
+lst = find_divisors(6)
+print(lst)
