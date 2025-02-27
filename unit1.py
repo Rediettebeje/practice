@@ -348,3 +348,32 @@ def find_divisors(n):
 
 lst = find_divisors(6)
 print(lst)
+
+# understand
+# we are give a list of numbers lst and a list of sequence sequence
+# our task is to check if the sequence is subsequence of the list
+# the number in sequence don't have to be consecutive but must be in the same order
+
+# plan  
+# 1. initialize a variable to store the index of the current number in the sequence
+# 2. iterate through the list
+# 3. for each number in the list, check if it is equal to the current number in the sequence
+# 4. if it is, increment the index by 1 to move to the next number in the sequence 
+# 5. if the index is equal to the length of the sequence, return True
+# 6. if the loop completes, return False
+
+# implement 
+def is_subsequence(lst, sequence):
+    seq_index = 0
+    for num in lst:
+
+        if num == sequence[seq_index]:
+            seq_index += 1
+        if seq_index== len(sequence):
+            return True
+        
+    return False
+
+lst = [5, 1, 22, 25, 6, -1, 8, 10]
+sequence = [1, 6, -1, 10]
+print(is_subsequence(lst, sequence))
