@@ -38,8 +38,15 @@ print(is_pangram(my_str))
 
 str2 = "The dog jumped"
 print(is_pangram(str2))
-        
-     
+
+# Write a function reverse_string() that takes a string my_str as a parameter and returns the string reversed.
+
+def reverse_string(my_str):
+    # [::-1] reverses the string
+    return my_str[::-1]
+
+my_str = "live your life"
+print(reverse_string(my_str))
 
 
 
