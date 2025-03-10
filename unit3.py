@@ -49,6 +49,157 @@ my_str = "live your life"
 print(reverse_string(my_str))
 
 
+#Takes in a string 
+# we need to reverse the letter of the strings 
+# We must target the characters; maybe split by "-"
+# we would reverse the string
+#2 point method, only move pointer when at a letter 
+def reverse_only_letters(s):
+    point1=0
+    point2=len(s)-1
+    newS=list(s)
+    while point1<point2:
+        if (newS[point1].isalpha()) and newS[point2].isalpha():
+            temp=newS[point1]
+            newS[point1]=newS[point2]
+            newS[point2]=temp
+            point1+=1
+            point2-=1
+        if(newS[point1].isalpha()) and not newS[point2].isalpha():
+            point2-=1
+        if(newS[point2].isalpha()) and not newS[point1].isalpha():
+            point1+=1
+    newVal="".join(newS)
+    return newVal
+s = "a-bC-dEf-ghIj"
+reversed_s = reverse_only_letters(s)
+print(reversed_s)
 
 
+# we have change the strings to integers by looping through the list of nums 
+# we also need a val that incruments as we go 
+# return that val 
+def sum_of_number_strings(nums):
+    total=0
+    for num in nums:
+        total+=int(num)
+    return total
+nums = ["10", "20", "30"]
+sum = sum_of_number_strings(nums)
+print(sum)
+#Problem 2
+# Empty list 
+# we iterate through the list to check if already in the new list 
+def remove_duplicates(nums):
+    no_dups=[]
+    for num in nums:
+        if num not in no_dups:
+            no_dups.append(num)
+    return no_dups
+nums = [1,1,1,2,3,4,4,5,6,6]
+print(remove_duplicates(nums))
+# we have change the strings to integers by looping through the list of nums 
+# we also need a val that incruments as we go 
+# return that val 
+def sum_of_number_strings(nums):
+    total=0
+    for num in nums:
+        total+=int(num)
+    return total
+nums = ["10", "20", "30"]
+sum = sum_of_number_strings(nums)
+print(sum)
 
+#Takes in a string 
+# we need to reverse the letter of the strings 
+# We must target the characters; maybe split by "-"
+# we would reverse the string
+#2 point method, only move pointer when at a letter 
+def reverse_only_letters(s):
+    point1=0
+    point2=len(s)-1
+    newS=list(s)
+    while point1<point2:
+        if (newS[point1].isalpha()) and newS[point2].isalpha():
+            temp=newS[point1]
+            newS[point1]=newS[point2]
+            newS[point2]=temp
+            point1+=1
+            point2-=1
+        if(newS[point1].isalpha()) and not newS[point2].isalpha():
+            point2-=1
+        if(newS[point2].isalpha()) and not newS[point1].isalpha():
+            point1+=1
+    newVal="".join(newS)
+    return newVal
+s = "a-bC-dEf-ghIj"
+reversed_s = reverse_only_letters(s)
+print(reversed_s)
+
+
+# we have change the strings to integers by looping through the list of nums 
+# we also need a val that incruments as we go 
+# return that val 
+def sum_of_number_strings(nums):
+    total=0
+    for num in nums:
+        total+=int(num)
+    return total
+nums = ["10", "20", "30"]
+sum = sum_of_number_strings(nums)
+print(sum)
+#Problem 2
+# Empty list 
+# we iterate through the list to check if already in the new list 
+def remove_duplicates(nums):
+    no_dups=[]
+    for num in nums:
+        if num not in no_dups:
+            no_dups.append(num)
+    return no_dups
+nums = [1,1,1,2,3,4,4,5,6,6]
+print(remove_duplicates(nums))
+# we have change the strings to integers by looping through the list of nums 
+# we also need a val that incruments as we go 
+# return that val 
+def sum_of_number_strings(nums):
+    total=0
+    for num in nums:
+        total+=int(num)
+    return total
+nums = ["10", "20", "30"]
+sum = sum_of_number_strings(nums)
+print(sum)
+
+
+word = "encourage"
+
+char_count = {}
+for char in word:
+    if char not in char_count:
+        char_count[char] = 1
+    else:
+        char_count[char] += 1
+
+# invalid syntax, we cannot add a list to a string 
+# char_count = ['e'] += 2
+print(char_count)
+
+# we cannot change the value of a string by indexing
+# greeting[7] = 'w'
+# print(greeting)
+
+
+# ignore whitespace and write a func that take a string and returns a dict with the count of each letter
+def count_letters(word):
+    char_count = {}
+    for char in word:
+        if char != " ":
+            if char not in char_count:
+                char_count[char] = 1
+            else:
+                char_count[char] += 1
+    return char_count
+
+word = "hello world"
+print(count_letters(word))
