@@ -97,6 +97,11 @@ def get_last(list):
 
 print(get_last([1,2,3,4]))
 
+# Range(start, stop, step)
+# a function named print_range() that takes in a start value(optional,if we dont provide the range will start from one), 
+# a stop value(required), and 
+# a step value(optional, if we donot provide each successive number in the sequence will increment by 1) as parameters
+
 # a function counter() that uses the range function to print numbers between 1 and
 # a given stop value (inclusive).
 
@@ -377,3 +382,68 @@ def is_subsequence(lst, sequence):
 lst = [5, 1, 22, 25, 6, -1, 8, 10]
 sequence = [1, 6, -1, 10]
 print(is_subsequence(lst, sequence))
+
+
+# Write a function print_indices() that takes in an integer list lst as a parameter
+#  and prints out the index of each item in the given list.
+#Use the function range() to loop through the list indices
+
+def print_indices(lst):
+    for index in range(len(lst)):
+        print(index)
+
+print_indices([1,2,3,4])
+
+# 
+# Write a function linear_search() that takes in a list lst and value target as parameters.
+#  The function returns the index of target in lst if found. If target is not found in lst, return -1
+# plan
+# 1. iterate through the list
+# 2. for each number in the list, check if it is equal to the target    
+# 3. if it is, return the index of the number
+# 4. if the loop completes, return -1
+
+def linear_search(lst, target):
+    for index in range(len(lst)):
+        if lst[index] == target:
+            return index
+    return -1
+
+print(linear_search([1,2,3,4], 3))
+
+# what if the target appers more than one time in the list
+# plan
+# 1. initialize an empty list to store the indices of the target
+# 2. iterate through the list
+# 3. for each number in the list, check if it is equal to the target
+# 4. if it is, add the index to the list
+# 5. return the list
+
+def linear_search(lst, target):
+    indices = []
+    for index in range(len(lst)):
+        if lst[index] == target:
+            indices.append(index)
+        else:
+            return -1
+    return indices
+
+print(linear_search([1,2,3,4,3], 3))
+# the above function is not working as expected
+# the return statement in the else block is causing the function to exit after
+#  checking the first number in the list 
+# the return statement should be outside the loop
+
+def linear_search(lst, target):
+    indices = []
+    for index in range(len(lst)):
+        if lst[index] == target:
+            indices.append(index)
+    if len(indices) == 0:
+        return -1
+    return indices
+
+
+
+
+
