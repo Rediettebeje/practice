@@ -1,7 +1,14 @@
-# a function cast_vote() that records a vote for a candidate in an election. The function accepts a dictionary votes that maps candidates to their current number of votes and a string candidate that represents the candidate the user would like to vote for. If the candidate doesn't exist, add them to the dictionary. The function should return the updated dictionary.
+# a function cast_vote() that records a vote for a candidate in an election. 
+# The function accepts a dictionary votes that maps candidates to their current 
+# number of votes and a string candidate that represents the candidate the user 
+# would like to vote for. If the candidate doesn't exist, add them to the dictionary. 
+# The function should return the updated dictionary.
 
 # understand
-# we are given a dictinary votes that maps candidates to their current number of votes and a string candidate that represents the candidate the user would like to vote for. If the candidate doesn't exist, add them to the dictionary. The function should return the updated dictionary.
+# we are given a dictinary votes that maps candidates to their current number of 
+# votes and a string candidate that represents the candidate the user would like to 
+# vote for. If the candidate doesn't exist, add them to the dictionary. The function
+#  should return the updated dictionary.
 
 # Plan
 # check if the candidate is in votes dictionary
@@ -87,6 +94,7 @@ print(get_top_player(scores))
 # if the value is greater than 1, return true
 # if the loop completes, return false
 #  implement
+
 def count_appearances(lst):
     counts = {}
     for num in lst:
@@ -101,7 +109,6 @@ def count_appearances(lst):
 
 
 def frequency_greater_than_n(nums, n):
-    # Write your code here
     
     dictt = {}
     
@@ -118,8 +125,6 @@ def frequency_greater_than_n(nums, n):
             
     return result
         
-
-
 
 
 nums = [1, 2, 2, 3, 3, 3, 4]
