@@ -32,5 +32,20 @@ def sortedList(num1,num2):
 
 print(sortedList([1,4,6],[2,3,6]))
 
+# plan
+# create a function that checks if a number is prime
+# if the number is less than 2, return false
+# iterate over the range from 2 to the number
+# if the number is divisible by any number in the range, return false
+# if the loop completes, return true
 
+# implement
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2,n):
+        if n % i == 0:
+            return False
+    return True
+    
 
