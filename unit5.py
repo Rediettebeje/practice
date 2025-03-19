@@ -28,6 +28,12 @@ class Pokemon:
     def catch(self):
         self.is_caught = True
 
+    def choose(self):
+        if self.is_caught:
+            print(self.name + " I choose you! ")
+        else:
+            print(self.name +" is wild! Catch them if you can! ")
+
 # instantiate of the class Pokemon
 squirtle = Pokemon("Squirtle", ["Water"])
 
@@ -45,3 +51,11 @@ my_pokemon.print_pokemon()
 
 my_pokemon.catch()
 my_pokemon.print_pokemon()
+
+# problem: 5
+my_pokemon = Pokemon("rattata", ["Normal"])
+my_pokemon.print_pokemon()
+
+my_pokemon.choose()
+my_pokemon.catch()
+my_pokemon.choose()
