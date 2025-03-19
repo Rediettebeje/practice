@@ -25,6 +25,9 @@ class Pokemon:
             "is_caught": self.is_caught # Output: "is_caught": False
         })
 
+    def catch(self):
+        self.is_caught = True
+
 # instantiate of the class Pokemon
 squirtle = Pokemon("Squirtle", ["Water"])
 
@@ -36,3 +39,9 @@ squirtle.print_pokemon()
 
 squirtle.is_caught = True
 squirtle.print_pokemon()
+
+my_pokemon = Pokemon("rattata", ["Normal"])
+my_pokemon.print_pokemon()
+
+my_pokemon.catch()
+my_pokemon.print_pokemon()
