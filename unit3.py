@@ -203,3 +203,26 @@ def count_letters(word):
 
 word = "hello world"
 print(count_letters(word))
+'''
+ a function delete_minimum_elements(nums) that takes in a list of integers nums as a parameter and continuously removes the minimum element until the list is empty. The function returns a new list of all the elements in nums in the order in which they were removed.
+'''
+# understand
+# edge case, is num can be empty 
+# we take a list of integers and continousily remove the minimum element until the list empty
+
+# plan
+# we need to go through the list and find the minimum element and put it in new list and remove it from num
+
+# implement
+def delete_minimum_elements(nums):
+    new_list = []
+    while len(nums) > 0:
+        min_num = min(nums)
+        new_list.append(min_num)
+        nums.remove(min_num)
+    return new_list
+
+nums = [5,3,2,8,3,1]
+removed_lst = delete_minimum_elements(nums)
+print(removed_lst)
+
