@@ -96,5 +96,49 @@ def sum_list(lst):
     else:
         return lst[0] + sum_list(lst[1:])
 
-print(sum_list([1, 2, 3, 4, 5]))
+# print(sum_list([1, 2, 3, 4, 5]))
 
+
+def is_power_of_two(n):
+    if n == 1:
+            return True
+    if n < 1 or n %2 != 0:    
+            return False
+    return is_power_of_two(n // 2)
+
+print(is_power_of_two(9)) # True
+print(is_power_of_two(6)) # False
+
+
+def binary_search(lst, target):
+	# Initialize a left pointer to the 0th index in the list
+    left = 0
+	# Initialize a right pointer to the last index in the list
+    right = len(lst) - 1
+	# While left pointer is less than right pointer:
+    while left <= right:
+		# Find the middle index of the array
+        middle = (left + right) // 2
+		
+		# If the value at the middle index is the target value:
+        if lst[middle] == target:
+			# Return the middle 
+            return middle
+		# Else if the value at the middle index is less than our target value:
+        elif lst[middle] < target:
+			# Update pointer(s) to only search right half of the list in next loop iteration
+            left = middle + 1
+		# Else
+        else:
+			# Update pointer(s) to only search left half of the list in next loop iteration
+            right = middle - 1
+	
+	# If we search whole list and haven't found target value, return -1
+    return -1
+# Test cases    
+print(binary_search([1, 2, 3, 4, 5], 3)) # Output: 2
+print(binary_search([1, 2, 3, 4, 5], 6)) # Output: -1
+
+
+
+    
