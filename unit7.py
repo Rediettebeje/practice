@@ -106,7 +106,7 @@ def is_power_of_two(n):
             return False
     return is_power_of_two(n // 2)
 
-print(is_power_of_two(9)) # True
+print(is_power_of_two(8)) # True
 print(is_power_of_two(6)) # False
 
 
@@ -135,10 +135,46 @@ def binary_search(lst, target):
 	
 	# If we search whole list and haven't found target value, return -1
     return -1
-# Test cases    
+# Test cases     
 print(binary_search([1, 2, 3, 4, 5], 3)) # Output: 2
 print(binary_search([1, 2, 3, 4, 5], 6)) # Output: -1
 
 
+def find_last(lst, target):
+	# Initialize a left pointer to the 0th index in the list
+    left = 0
+	# Initialize a right pointer to the last index in the list
+    right = len(lst) - 1
+	# While left pointer is less than right pointer:
+
+    # create a variable to store the last occurrence of the target value
+    last_occur = -1
+
+
+    while left <= right:
+		# Find the middle index of the array
+        middle = (left + right) // 2
+		
+		# If the value at the middle index is the target value:
+        if lst[middle] == target:
+            # Store the middle index in last_occur variable
+            last_occur = middle
+			# Update pointer(s) to only search right half of the list in next loop iteration
+            left = middle + 1
+		# Else if the value at the middle index is less than our target value:
+        elif lst[middle] < target:
+			# Update pointer(s) to only search right half of the list in next loop iteration
+            left = middle + 1
+		# Else
+        else:
+			# Update pointer(s) to only search left half of the list in next loop iteration
+            right = middle - 1
+	
+	# return the last occurrence of the target value
+    return last_occur
+
+# Test cases     
+print(find_last([1, 3, 5, 7, 9, 11, 11, 13, 15], target = 11)) # Output: 6
+print(find_last([1, 3, 5, 7, 9, 11, 11, 13, 15], target = 6)) # Output: -1
 
     
