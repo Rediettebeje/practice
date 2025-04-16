@@ -117,3 +117,46 @@ def search(nums, target):
         return [start, end]
     else:
         return [-1, -1]
+    
+
+# section B 
+
+def mystery_function(arr,left,right,key):
+    if right >= left:
+        mid = left + ((right - left)) // 2
+        if arr[mid] == key:
+            return mid
+        elif arr[mid] > key:
+            return mystery_function(arr, left, mid - 1, key)
+        else:
+            return mystery_function(arr, mid + 1, right, key)
+       
+    return -1
+
+# Example array and key
+arr = [1, 3, 5, 7, 9, 11]
+key = 7
+
+# Call the function
+result = mystery_function([1,2,3,4,5], 0, 4, 20)
+
+# Output the result
+print(result) 
+
+def is_perfect_square(num):
+    if num < 0:
+        return False
+    left, right = 0, num
+    while left <= right:
+        mid = left + (right - left) // 2
+        if mid * mid == num:
+            return True
+        elif mid * mid < num:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return False
+
+# Example usage
+print(is_perfect_square(16))  # True
+print(is_perfect_square(14))  # False
