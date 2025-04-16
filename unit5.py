@@ -1,61 +1,92 @@
-# problem: 1
-class Pokemon:
-    def __init__(self, name, types):
-        self.name = name
-        self.types = types
-        self.is_caught = False
+# 
 
-# instantiate of the class Pokemon 
-my_pokemon = Pokemon("Pikachu", ["Electric"])
+# write a fun that adds each elemet values as a node with values [i] to the linked list
+class Node:
+    
+        def __init__(self, value, next_node=None):
+               self.value = value
+               self.next = next_node
+def extend_linked_list(tail, values):
+        
+        for i in values:
+            tail.next = Node(i)
+            tail = tail.next
+        return tail
+   
+# Problem 1: Detect Circular Linked List
+# A circular linked list is a linked list where the tail node points at the head node. Given the head of a linked list, write a function is_circular() that returns True if the linked list is circular and False otherwise.
 
-# print the name of the pokemon
-print(my_pokemon.name)
+# Note: a circular list is more than just a cycle - specifically connecting the first and last nodes.
 
-# problem: 2
-class Pokemon:
-    def __init__(self, name, types):
-        self.name = name
-        self.types = types
-        self.is_caught = False
+# Evaluate the time and space complexity of your solution. Define your variables and provide a rationale for why you believe your solution has the stated time and space complexity.
 
-    def print_pokemon(self):
-        print({
-            "name": self.name,   # Output: "name": "Squirtle",
-            "types": self.types, # Output: "types": ["Water"],
-            "is_caught": self.is_caught # Output: "is_caught": False
-        })
+class Node:
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
 
-    def catch(self):
-        self.is_caught = True
+def is_circular(head):
+    current = head
+    while current.next:
+        current = current.next
+        if current.next == head:
+            return True
+       
+    return False
 
-    def choose(self):
-        if self.is_caught:
-            print(self.name + " I choose you! ")
-        else:
-            print(self.name +" is wild! Catch them if you can! ")
 
-# instantiate of the class Pokemon
-squirtle = Pokemon("Squirtle", ["Water"])
+num1 = Node(1)
+num2 = Node(2)
+num3 = Node(3)
+num1.next = num2
+num2.next = num3
+num3.next = num1
+# num1 -> num2 -> num3 -> num1
+print(is_circular(num1))
 
-# call the print_pokemon method
-squirtle.print_pokemon()
 
-# problem: 3
-# update squirtle Pokemon so that is_caught is updated to True
+var1 = Node(4)
+var2 = Node(5)
+var3 = Node(6)
+var1.next = var2
+var2.next = var3
+var3.next = None
+# var1 -> var2 -> var3
+print(is_circular(var1))
 
-squirtle.is_caught = True
-squirtle.print_pokemon()
-
-my_pokemon = Pokemon("rattata", ["Normal"])
-my_pokemon.print_pokemon()
-
-my_pokemon.catch()
-my_pokemon.print_pokemon()
-
-# problem: 5
-my_pokemon = Pokemon("rattata", ["Normal"])
-my_pokemon.print_pokemon()
-
-my_pokemon.choose()
-my_pokemon.catch()
-my_pokemon.choose()
+#pointer that will keep checking if the next node is head
+#if the next node is head then it will return true
+#return false otherwise
+#we will also update node every time
+class Node:
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
+def is_circular(head):
+    current = head
+    while current.next:
+        current = current.next
+        if current.next == head:
+              return True
+    return False
+# num1 -> num2 -> num3 -> num1
+# num1 = Node("num1")
+# num2 = Node("num2", num1)
+# num3 = Node("num3", num2)
+num3 = Node("num3")
+num2 = Node("num2", num3)
+num1 = Node("num1", num2)
+num1.next = num2
+num2.next = num3
+num3.next = num1
+print(is_circular(num1))
+# var1 -> var2 -> var3
+# print(is_circular(var1))
+var1 = Node(10)
+var2 = Node(20)
+var3 = Node(30)
+var1.next = var2
+var2.next = var3
+var3.next = None  # No cycle
+# var1 -> var2 -> var3
+print(is_circular(var1))
