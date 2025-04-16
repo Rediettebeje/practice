@@ -88,7 +88,7 @@ def factorial(n):
         return n * factorial(n-1)
 
 
-# print(factorial(5))
+print(factorial(4))
 #
 def sum_list(lst):
     if len(lst) == 0:
@@ -98,6 +98,28 @@ def sum_list(lst):
 
 # print(sum_list([1, 2, 3, 4, 5]))
 
+#understanding:
+# a fun that takes a list of number and returns their sum
+# what if the list is empty, we return 0
+
+# Planning:
+# 1. Check if the list is empty
+# 2. If it is, return 0
+# 3. If not, add the first number [0]
+# 4. Call the recursive function with the rest of the list [1:]
+
+# note lst[1:] — slicing from index 1 onward,
+# lst[:1] would give only the first element
+
+def sum_list(lst):
+    if len(lst) == 0:
+        return 0
+    
+    return lst[0] + sum_list(lst[1:])
+
+lst = [1,2,3,4,5] 
+print(sum_list(lst))
+	
 
 def is_power_of_two(n):
     if n == 1:
