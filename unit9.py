@@ -139,4 +139,42 @@ root.right.right = TreeNode(7)
 output = sum_of_left_leaves(root)
 print(output)  # Output: 24 (9 + 15)
 
+# determining if a binary tree is perfectly balanced
+# a binary tree is perfectly balanced if the depth of the two subtrees of every node never differ by more than 1.
+# given the root of a binary tree, return true if it is perfectly balanced or false otherwise
+# a tree with only one node is perfectly balanced
 
+
+from collections import deque
+
+class TreeNode:
+    def __init__(self, value=0, left=None, right=None):
+        self.val = value
+        self.left = left
+        self.right = right
+
+def is_perfect(root):
+    if not root:
+        return True
+
+    queue = deque([(root, 0)])
+    leaf_level = None
+
+    while queue:
+        node, level = queue.popleft()
+
+        if not node.left and not node.right:
+            if leaf_level is None:
+                leaf_level = level
+            elif leaf_level != level:
+                return False
+        elif not node.left or not node.right:
+            return False
+        else:
+            queue.append((node.left, level + 1))
+            queue.append((node.right, level + 1))
+
+    return True
+
+
+    
